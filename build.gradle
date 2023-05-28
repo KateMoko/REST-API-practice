@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+
+def jUnitVersion = "5.9.3",
+    slf4jVersion = "2.0.7"
+
+group 'com.katemoko'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(
+            "org.junit.jupiter:junit-jupiter:$jUnitVersion",
+            "org.slf4j:slf4j-simple:$slf4jVersion",
+            "io.rest-assured:rest-assured:5.3.0")
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
