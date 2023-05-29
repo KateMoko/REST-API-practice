@@ -3,7 +3,8 @@ plugins {
 }
 
 def jUnitVersion = "5.9.3",
-    slf4jVersion = "2.0.7"
+    slf4jVersion = "2.0.7",
+    restAssuredVersion = "5.3.0"
 
 group 'com.katemoko'
 version '1.0-SNAPSHOT'
@@ -16,7 +17,8 @@ dependencies {
     testImplementation(
             "org.junit.jupiter:junit-jupiter:$jUnitVersion",
             "org.slf4j:slf4j-simple:$slf4jVersion",
-            "io.rest-assured:rest-assured:5.3.0")
+            "io.rest-assured:rest-assured:$restAssuredVersion",
+            "io.rest-assured:json-schema-validator:$restAssuredVersion")
 }
 
 tasks.withType(JavaCompile) {
