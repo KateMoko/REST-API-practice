@@ -8,7 +8,7 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInC
 import static org.hamcrest.Matchers.hasItems;
 import static org.hamcrest.Matchers.is;
 
-public class reqresTests {
+public class ReqresTests {
 
     @BeforeAll
     static void setUp() {
