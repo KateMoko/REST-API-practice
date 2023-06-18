@@ -13,3 +13,4 @@ HELP.md
 .DS_Store
 !**/src/main/**
 !**/src/test/**
+/settings.gradle
